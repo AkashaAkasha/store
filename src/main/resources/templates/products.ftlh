@@ -8,11 +8,19 @@
     <title>BUYSELL</title>
 </head>
 <body>
-<h1 style="color: darkgreen">My online store <a href="/login">Войти</a></h1>
-<form action="/logout" method="post">
+<h1 style="color: darkgreen">My online store</h1>
+<#if user.email??>
+    <h3>Имя пользователя: <i>${user.name}</i></h3>
+    <form action="/logout" method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <input type="submit" value="Выйти"/>
 </form>
+    <#if user.isAdmin()>
+        <a href="/admin">Панель администратора</a>
+    </#if>
+    <#else><a href="/login">Войти</a>
+</#if>
+
 <h4>Товары со всей России</h4>
 
 <form action="/" method="get">

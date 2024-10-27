@@ -17,8 +17,8 @@
 <b>Описание товара: </b>${product.description}<br><br>
 <b>Цена: </b>${product.price}<br><br>
 <b>Город: </b>${product.city}<br><br>
-<b>Автор: </b>${product.user.getName()}<br><br>
-<#--<b>номер тел: </b>${product.user.phoneNumber}<br><br>-->
+<b>Автор: </b><a href="/user/${product.user.id}">${product.user.name}</a><br>
+<b>номер тел: </b>${product.user.phoneNumber}<br><br>
 <#--<hr>-->
 <#--<form action="/product/delete/${product.id}" method="post">-->
 <#--    <input type="submit" value="удалить товар">-->
